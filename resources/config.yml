@@ -1,0 +1,50 @@
+---
+# Welcome to the randomOre plugin
+# it is a simple plugin to take in hand
+# you have 7 configurable drops
+
+ID-randomOre: 21 #Lapis id
+META-randomOre: 0
+
+#-------DROP-1---------
+ID-drop-1: 265
+META-drop-1: 0
+Number-drop-1: 1
+
+
+#-------DROP-2---------
+ID-drop-2: 266
+META-drop-2: 0
+Number-drop-2: 1
+
+
+#-------DROP-3---------
+ID-drop-3: 388
+META-drop-3: 0
+Number-drop-3: 1
+
+
+#-------DROP-4---------
+ID-drop-4: 264
+META-drop-4: 0
+Number-drop-4: 1
+
+
+#-------DROP-5---------
+ID-drop-5: 263
+META-drop-5: 0
+Number-drop-5: 1
+
+
+#-------DROP-6---------
+ID-drop-6: 351
+META-drop-6: 4
+Number-drop-6: 1
+
+
+#-------DROP-7---------
+ID-drop-7: 331
+META-drop-7: 0
+Number-drop-7: 1
+
+...
