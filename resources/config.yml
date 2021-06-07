@@ -1,0 +1,14 @@
+---
+randomOre: "1:0"
+
+drops:
+  "388:0":
+    chance: 3
+    amount: 2
+    # to disable custom name, set name: null or delete element
+    name: "§cExample"
+  "4:0":
+    chance: 3
+    amount: 2
+    name: null
+...
