@@ -8,7 +8,7 @@ use pocketmine\item\Item;
 
 class BlockListener implements Listener
 {
-    public randomOre $plugin;
+    public $plugin;
 
     public function __construct($plugin)
     {
