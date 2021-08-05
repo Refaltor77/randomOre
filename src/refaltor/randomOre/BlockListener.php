@@ -8,7 +8,7 @@ use pocketmine\item\Item;
 
 class BlockListener implements Listener
 {
-    public $plugin;
+    private $plugin;
 
     public function __construct($plugin)
     {
@@ -17,24 +17,26 @@ class BlockListener implements Listener
 
     public function onBreak(BlockBreakEvent $event)
     {
+        
         $block = $event->getBlock();
         $array = $this->plugin->getConfig()->getAll();
 
         if ($block->getId() . ":" . $block->getDamage() === $array['randomOre']){
+            
+            $drops = [];
+            
             foreach ($array['drops'] as $id => $keys){
+                
                 $item = explode(":", $id);
-                if (isset($array['chance'])){
-                    if (mt_rand(1, $array['chance']) === 1){
-                        $item = Item::get($item[0], $item[1], $array['amount']);
-                        if (isset($array['name']) && $array['name'] !== null) $item->setCustomName($array['name']);
-                        $event->setDrops([$item]);
-                    }
-                }else {
-                   $item = Item::get($item[0], $item[1], $array['amount']);
-                   if (isset($array['name']) && $array['name'] !== null) $item->setCustomName($array['name']);
-                   $event->setDrops([$item]);
-                }
+                $item = Item::get($item[0], $item[1], $keys['amount']);
+                
+                if(isset($keys['name']) AND $keys['name'] !== null)
+                    $item->setCustomName($keys['name']);                
+                if (empty($keys['chance']) OR mt_rand(1, 100) === intval($keys['chance'])) 
+                    $drops[] = $item;
             }
+            
+            $event->setDrops($drops);
         }
     }
 }
