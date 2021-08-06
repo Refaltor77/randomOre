@@ -32,7 +32,7 @@ class BlockListener implements Listener
                 
                 if(isset($keys['name']) AND $keys['name'] !== null)
                     $item->setCustomName($keys['name']);                
-                if (empty($keys['chance']) OR mt_rand(1, 100) === intval($keys['chance'])) 
+                if (empty($keys['chance']) OR mt_rand(1, 100) <= intval($keys['chance'])) 
                     $drops[] = $item;
             }
             
